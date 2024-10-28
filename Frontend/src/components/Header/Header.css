@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.header-second-half {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-second-half-name {
+    margin-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333E48;
+    white-space: nowrap;
+}
+

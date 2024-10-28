@@ -1,0 +1,32 @@
+.buttons {
+    background: #007298;
+    border-radius: 4px;
+    border-color: transparent;
+    padding: 0px 20px;
+    width: 100%;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.buttons:has(svg) {
+    width: fit-content;
+    height: 100%;
+}
+
+.buttons p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-transform: uppercase;
+}
+
+.icon {
+    font-size: 25px;
+    color: white;
+}

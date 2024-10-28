@@ -1,0 +1,48 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container h3 {
+    color: #333E48;
+    font-size: 32px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #CFCFCF;
+    background-color: #FFF;
+    padding: 70px 90px;
+    font-size: 16px;
+}
+
+.login-error {
+    color: red;
+    font-size: 16px;
+    margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.login-form-button {
+    width: 62%;
+}
+
+.login-form-text {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.login-form p a {
+    color: #333E48;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}

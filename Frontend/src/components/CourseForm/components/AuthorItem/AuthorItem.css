@@ -1,0 +1,21 @@
+.author-item {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    color: #333E48;
+    font-weight: 400;
+}
+
+.author-item button{
+    background-color: transparent;
+    border: none;
+    color: #333E48;
+    cursor: pointer;
+}
+
+.author-item button .fa-plus,
+.author-item button .fa-trash {
+    color: #333E48;
+    font-size: 25px;
+    margin: 7px;
+}

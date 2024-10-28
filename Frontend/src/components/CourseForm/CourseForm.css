@@ -1,0 +1,139 @@
+.create-course-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-course-container h3 {
+    font-size: 32px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #333E48;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #CFCFCF;
+    border-radius: 4px;
+    padding: 10px 80px;
+    width: 1104px;
+    min-height: 700px;
+}
+
+.main-info p:first-child,
+.duration p:first-child,
+.authors-container {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333E48;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.duration {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.duration p {
+    margin-top: 0;
+}
+
+.duration-data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.duration-data-input {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.duration-data-span{
+    font-size: 18px;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.authors-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.authors-form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.authors-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 610px;
+    margin-right: 10px;
+}
+
+.author-create {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0px;
+    margin-right: 10px;
+}
+
+.author-create p {
+    margin-top: 0px;
+}
+
+.course-authors {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.course-authors span {
+    font-size: 16px;
+    color: #333E48;
+    font-weight: 400;
+}
+
+.authors-element-available span {
+    font-size: 16px;
+    color: #333E48;
+    font-weight: 400;
+}
+
+.authors-list-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 24px;
+}
+
+.create-course-form-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.create-course-form-cancel-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.create-course-form-create-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search-bar-input {
+    margin-right: 5px;
+}
+
+.search-bar-button {
+    margin-top: 3px;
+}

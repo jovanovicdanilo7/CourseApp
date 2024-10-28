@@ -1,0 +1,86 @@
+.course-card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    border-left: 5px solid #333E48;
+    margin: 15px 0px;
+    width: 100%;
+}
+
+.course-card-container h2 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+
+.course-text {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.course-info {
+    display: flex;
+    width: 100%;
+}
+
+.course-info-description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #333E48;
+    padding-right: 25px;
+    flex: 1;
+}
+
+.course-metadata {
+    display: flex;
+    flex: 0 0 30%;
+    flex-direction: column;
+}
+
+.course-metadata-description {
+    margin-bottom: 30px;
+}
+
+.course-metadata-description p {
+    margin: 3px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.course-metadata-description p b {
+    font-size: 16px;
+    font-weight: 700;
+    padding-right: 3px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.course-metadata-description p:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.course-metadata-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.course-metadata-buttons-show {
+    margin-right: 15px;
+}
+
+.course-metadata-buttons-delete {
+    margin-right: 15px;
+}
+
+.course-metadata-buttons-edit {
+    margin-right: 15px;
+}

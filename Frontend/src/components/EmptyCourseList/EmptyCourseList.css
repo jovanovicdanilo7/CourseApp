@@ -1,0 +1,27 @@
+.empty-course {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.empty-course h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333E48;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.empty-course-text p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.empty-course-button {
+    display: flex;
+    margin-top: 30px;
+}
