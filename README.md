@@ -8,4 +8,8 @@ npm start
 
 For frontend side execute these two commands:
 npm install
-npm run
+npm start
+
+If you want to login with admin permissions:
+    Email: admin@email.com
+    Password: admin123
