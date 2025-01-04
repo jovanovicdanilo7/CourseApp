@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import { Button } from "../../../../common/Button/Button";
@@ -8,8 +7,6 @@ import { Button } from "../../../../common/Button/Button";
 import "./CourseCard.css"
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../../store";
-import axios from "axios";
-import { deleteCourseById, setCourses } from "../../../../store/courses/actions";
 import { deleteCourseThunk } from "../../../../store/courses/thunk";
 
 interface CourseCardProp {
@@ -23,7 +20,6 @@ interface CourseCardProp {
 
 export function CourseCard(props: CourseCardProp): JSX.Element {
     const navigate = useNavigate();
-    const courses = useSelector((state: RootState) => state.courses);
     const user = useSelector((state: RootState) => state.user);
     const dispatch: AppDispatch = useDispatch();
 
@@ -31,7 +27,7 @@ export function CourseCard(props: CourseCardProp): JSX.Element {
         try {
             await dispatch(deleteCourseThunk(user.token, courseId));
         } catch (error) {
-            console.error("Some error occured while deleting the course: ", error)
+            console.trace("onDelete: Error occurred");
             throw error;
         }
     }

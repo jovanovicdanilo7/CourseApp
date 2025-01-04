@@ -13,7 +13,7 @@ export const fetchAuthorsThunk = () => async (dispatch: AppDispatch) => {
         const authors = await fetchAuthors();
         dispatch(setAuthors(authors));
     } catch(error) {
-        console.error("Error fetching authors: ", error);
+        console.trace("fetchAuthorsThunk: Error occurred");
         throw error;
     }
 }
@@ -25,7 +25,7 @@ export const addAuthorThunk = (token: string, authorData: AuthorData) => async (
 
         return response.data.result;
     } catch (error) {
-        console.error("Error adding author: ", error);
+        console.trace("addAuthorThunk: Error occurred");
         throw error;
     }
 }

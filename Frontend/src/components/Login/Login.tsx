@@ -2,14 +2,12 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
-import axios from 'axios';
 
 import { Input } from "../../common/Input/Input";
 import { Button } from "../../common/Button/Button";
 
 import "./Login.css";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../store/user/actions";
 import { loginUserReq } from "../../store/services";
 

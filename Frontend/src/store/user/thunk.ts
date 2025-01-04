@@ -9,6 +9,7 @@ export const fetchUsersThunk = () => async (dispatch: AppDispatch) => {
 
         dispatch(getUser(user.result));
     } catch (error) {
-        console.error("Error occurred while fetching user in thunk: ", error);
+        console.trace("fetchUsersThunk: Error occurred");
+        throw error;
     }
 };

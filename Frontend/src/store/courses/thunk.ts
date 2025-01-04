@@ -16,17 +16,17 @@ export const fetchCoursesThunk = () => async (dispatch: AppDispatch) => {
         const courses = await fetchCourses();
         dispatch(setCourses(courses));
     } catch (error) {
-        console.error("Error fetching courses: ", error);
+        console.trace("fetchCoursesThunk: Error occurred");
         throw error;
     }
 }
 
 export const deleteCourseThunk = (token: string, courseId: string) => async (dispatch: AppDispatch) => {
     try {
-        const response = await deleteCourse(token, courseId);
+        await deleteCourse(token, courseId);
         dispatch(deleteCourseById(courseId));
     } catch (error) {
-        console.error("Error deleteing course: ", error);
+        console.trace("deleteCourseThunk: Error occurred");
         throw error;
     }
 }
@@ -38,7 +38,7 @@ export const addCourseThunk = (token: string, courseData: CourseData) => async (
 
         return response;
     } catch (error) {
-        console.error("Error adding course: ", error);
+        console.trace("addCourseThunk: Error occurred");
         throw error;
     }
 }
@@ -48,7 +48,7 @@ export const updateCourseThunk = (token: string, courseId: string, courseData: C
         const response = await updateCourse(token, courseId, courseData);
         dispatch(updateCourseAction(response.data.result));
     } catch (error) {
-        console.error("Error updating course: ", error);
+        console.trace("updateCourseThunk: Error occurred");
         throw error;
     }
 }

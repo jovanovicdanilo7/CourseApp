@@ -39,7 +39,7 @@ export const fetchUser = async (token) => {
 
         return response.data;
     } catch (error) {
-        console.error("Error in fetchUser: ", error);
+        console.trace("fetchUser: Error occured");
         throw error;
     }
 };
@@ -55,7 +55,7 @@ export const logoutUser = async (token) => {
 
         return response;
     } catch (error) {
-        console.error("Error in logoutUser: ", error);
+        console.trace("logoutUser: Error occured");
         throw error;
     }
 }
@@ -70,7 +70,7 @@ export const deleteCourse = async (token, courseId) => {
         const response = await httpDelReq.delete(`/courses/${courseId}`);
         return response;
     } catch (error) {
-        console.error("Error in deleteCourse: ", error);
+        console.trace("deleteCourse: Error occured");
         throw error;
     }
 }
@@ -86,7 +86,7 @@ export const addCourse = async (token, courseData) => {
 
         return response;
     } catch (error) {
-        console.error("Error in addCourse: ", error);
+        console.trace("addCourse: Error occured");
         throw error;
     }
 }
@@ -102,7 +102,7 @@ export const addAuthor = async (token, authorData) => {
 
         return response;
     } catch (error) {
-        console.error("Error in addAuthor: ", error);
+        console.trace("addAuthor: Error occured");
         throw error;
     }
 }
@@ -113,7 +113,7 @@ export const fetchCourseById = async (courseId) => {
 
         return response.data.result;
     } catch (error) {
-        console.error("Error in fetchCourseById: ", error);
+        console.trace("fetchCourseById: Error occured");
         throw error;
     }
 }
@@ -129,7 +129,7 @@ export const updateCourse = async (token, courseId, courseData) => {
 
         return response;
     } catch (error) {
-        console.error("Error in updateCourse: ", error);
+        console.trace("updateCourse: Error occured");
         throw error;
     }
 }

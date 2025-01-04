@@ -29,8 +29,9 @@ function App() {
                     await dispatch(fetchUsersThunk());
                     setLoading(false);
             } catch(error) {
-                console.error('Error fetching courses:', error);
+                console.trace("fetchCoursesAndAuthors: Error occurred");
                 setLoading(false);
+                throw error;
             }
         };
 

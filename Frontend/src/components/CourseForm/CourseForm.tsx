@@ -1,6 +1,5 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { useNavigate, useParams } from "react-router-dom";
 import React from "react";
 
@@ -8,16 +7,14 @@ import { Button } from "../../common/Button/Button";
 import { Input } from "../../common/Input/Input";
 import { AuthorItem } from "./components/AuthorItem/AuthorItem";
 import { getCouresDuration } from "../../helpers/getCourseDuration";
-import { getCurrentDate } from "../../helpers/getCurrentDate";
 
 import "./CourseForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { saveCourse, setCourses } from "../../store/courses/actions";
-import { saveAuthor, setAuthors } from "../../store/authors/actions";
+import { saveAuthor } from "../../store/authors/actions";
 import { addCourseThunk, updateCourseThunk } from "../../store/courses/thunk";
 import { addAuthorThunk } from "../../store/authors/thunk";
-import { fetchCourseById, updateCourse } from "../../store/services";
+import { fetchCourseById } from "../../store/services";
 
 interface CourseFormData {
     title: string;

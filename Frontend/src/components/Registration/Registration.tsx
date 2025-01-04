@@ -1,7 +1,6 @@
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
-import axios from 'axios';
 
 import { Button } from "../../common/Button/Button";
 import { Input } from "../../common/Input/Input";
@@ -16,11 +15,12 @@ export function Registration(): JSX.Element {
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         try {
-            const response = await registerUserReq(data);
+            await registerUserReq(data);
 
             navigate("/login");
         } catch(error) {
-            console.error('Error during registration:', error);
+            console.trace("onSubmit: Error occurred");
+            throw error;
         }
     };
 

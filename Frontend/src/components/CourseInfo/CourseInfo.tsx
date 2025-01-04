@@ -1,16 +1,13 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Button } from '../../common/Button/Button';
 import { formatCreationDate } from '../../helpers/formatCreationDate';
 import { getCouresDuration } from '../../helpers/getCourseDuration';
 
 import "./CourseInfo.css";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import axios from 'axios';
-import { setAuthors } from '../../store/authors/actions';
-import { setCourses } from '../../store/courses/actions';
 
 interface Author {
     name: string;

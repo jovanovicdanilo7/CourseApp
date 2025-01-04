@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { logout } from "../../store/user/actions";
 import { logoutUser } from "../../store/services";
+import axios from "axios";
 
 
 export function Header(): JSX.Element {
@@ -22,15 +23,31 @@ export function Header(): JSX.Element {
     const token = localStorage.getItem('token');
 
     const onLogout = async () => {
-        await logoutUser(user.token);
-        dispatch(logout());
+        try {
+            await logoutUser(user.token);
 
-        localStorage.removeItem('token');
-
-        setTimeout(() => {
-            navigate("/login");
-        }, 0); 
+            dispatch(logout());
+            localStorage.removeItem('token');
+    
+            setTimeout(() => {
+                navigate("/login");
+            }, 0);
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                if (error.response?.status === 401) {
+                    alert("Your session has expired. Please log in again.");
+                    dispatch(logout());
+                    localStorage.removeItem('token');
+                    navigate("/login");
+                } else {
+                    alert("An unexpected error occurred. Please try again.");
+                }
+            } else {
+                console.error("An unknown error occurred:", error);
+            }
+        }
     };
+    
 
     return (
         <div className="header">
