@@ -98,14 +98,21 @@
 
 .course-authors {
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
+    flex: 1;
 }
 
 .course-authors span {
     font-size: 16px;
     color: #333E48;
     font-weight: 400;
+}
+
+.course-authors-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .authors-element-available span {

@@ -249,11 +249,14 @@ export function CreateCourse(): JSX.Element {
                                     <span>Author list is empty</span>
                                 ) : (
                                     courseAuthors.map(author => (
-                                        <AuthorItem
-                                            key={author.id} 
-                                            onClean={() => deleteAuthorFromCourse(author.id)} 
-                                            authorName={author.name} 
-                                        />
+                                        <div className="course-authors-items">
+                                            <AuthorItem
+                                                key={author.id}
+                                                onClean={() => deleteAuthorFromCourse(author.id)}
+                                                authorName={author.name}
+                                            />
+                                        </div>
+                                        
                                     ))
                                 )}
                             </div>

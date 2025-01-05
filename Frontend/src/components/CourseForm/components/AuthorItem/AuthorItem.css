@@ -1,12 +1,23 @@
 .author-item {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
     font-size: 16px;
+    gap: 1rem;
     color: #333E48;
     font-weight: 400;
+    max-width: 300px;
+    margin-bottom: 5px;
+    border: 2px solid #007298;
+    border-radius: 4px;
 }
 
-.author-item button{
+.author-item p {
+    margin: 0;
+    padding: 5px;
+}
+
+.author-item button {
     background-color: transparent;
     border: none;
     color: #333E48;
