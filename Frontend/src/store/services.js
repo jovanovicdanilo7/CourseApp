@@ -107,6 +107,22 @@ export const addAuthor = async (token, authorData) => {
     }
 }
 
+export const deleteAuthor = async (token, authorId) => {
+    const httpDelReq = axios.create({
+        baseURL: 'http://localhost:4000',
+        headers: { 'Authorization': token }
+    });
+
+    try {
+        const response = await httpDelReq.delete(`/authors/${authorId}`);
+
+        return response;
+    } catch (error) {
+        console.trace("deleteAuthor: Error occured");
+        throw error;
+    }
+}
+
 export const fetchCourseById = async (courseId) => {
     try {
         const response = await axios.get(`http://localhost:4000/courses/${courseId}`);

@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { saveAuthor } from "../../store/authors/actions";
 import { addCourseThunk, updateCourseThunk } from "../../store/courses/thunk";
-import { addAuthorThunk } from "../../store/authors/thunk";
+import { addAuthorThunk, deleteAuthorThunk } from "../../store/authors/thunk";
 import { fetchCourseById } from "../../store/services";
 
 interface CourseFormData {
@@ -130,6 +130,14 @@ export function CreateCourse(): JSX.Element {
         }
     };
 
+    const deleteAuthor = async (authorId: string) => {
+        const author = authorsList.find(author => author.id === authorId);
+        if (author) {
+            await dispatch(deleteAuthorThunk(user.token, authorId));
+            setAuthorsList(authorsList.filter(a => a.id !== authorId));
+        }
+    }
+
     const deleteAuthorFromCourse = (authorId: string) => {
         const author = courseAuthors.find(author => author.id === authorId);
         if (author) {
@@ -226,7 +234,8 @@ export function CreateCourse(): JSX.Element {
                                         authorsList.map(author => (
                                             <AuthorItem
                                                 key={author.id} 
-                                                onAdd={() => addAuthorToCourse(author.id)} 
+                                                onAdd={() => addAuthorToCourse(author.id)}
+                                                onDelete={() => deleteAuthor(author.id)}
                                                 authorName={author.name} 
                                             />
                                         ))
@@ -242,7 +251,7 @@ export function CreateCourse(): JSX.Element {
                                     courseAuthors.map(author => (
                                         <AuthorItem
                                             key={author.id} 
-                                            onDelete={() => deleteAuthorFromCourse(author.id)} 
+                                            onClean={() => deleteAuthorFromCourse(author.id)} 
                                             authorName={author.name} 
                                         />
                                     ))

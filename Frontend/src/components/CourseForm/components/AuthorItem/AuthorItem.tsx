@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTrash, faBan } from '@fortawesome/free-solid-svg-icons';
 import React from "react";
 
 import "./AuthorItem.css";
@@ -8,6 +8,7 @@ interface AuthorItemProps {
     authorName: string;
     onAdd?: () => void;
     onDelete?: () => void;
+    onClean?: () => void;
 }
 
 export function AuthorItem(props: AuthorItemProps): JSX.Element {
@@ -19,9 +20,15 @@ export function AuthorItem(props: AuthorItemProps): JSX.Element {
                     <FontAwesomeIcon icon={faPlus} />
                 </button>
             ) }
-            
+
             { props.onDelete && (
                 <button onClick={ props.onDelete } type="button">
+                    <FontAwesomeIcon icon={faBan} />
+                </button>
+            ) }
+            
+            { props.onClean && (
+                <button onClick={ props.onClean } type="button">
                     <FontAwesomeIcon icon={faTrash} />
                 </button>
             ) }
