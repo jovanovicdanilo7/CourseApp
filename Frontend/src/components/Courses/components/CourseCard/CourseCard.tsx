@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import React from "react";
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import { Button } from "../../../../common/Button/Button";
-
-import "./CourseCard.css"
-import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../../store";
 import { deleteCourseThunk } from "../../../../store/courses/thunk";
+import { useDispatch, useSelector } from "react-redux";
+
+import "./CourseCard.css";
 
 interface CourseCardProp {
     id: string;
@@ -57,7 +56,7 @@ export function CourseCard(props: CourseCardProp): JSX.Element {
                             <Button onClick={ () => navigate(`/courses/${props.id}`) } buttonText="Show course" type="button"/>
                         </div>
                         { user.role === 'admin' && (
-                            <>
+                            <div className="course-metadata-admin-buttons">
                                 <div className="course-metadata-buttons-delete">
                                     <Button onClick={() => { onDelete(props.id) }} buttonText="Delete" type="button" icon={faTrash} />
                                 </div>
@@ -65,7 +64,7 @@ export function CourseCard(props: CourseCardProp): JSX.Element {
                                 <div className="course-metadata-buttons-edit">
                                     <Button onClick={() => { onEdit(props.id) }} buttonText="Edit" type="button" icon={faEdit} />
                                 </div>
-                            </>
+                            </div>
                         ) }
                         
                     </div>

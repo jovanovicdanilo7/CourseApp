@@ -1,13 +1,13 @@
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import React from "react";
 
 import { Button } from '../../common/Button/Button';
 import { formatCreationDate } from '../../helpers/formatCreationDate';
 import { getCouresDuration } from '../../helpers/getCourseDuration';
+import { RootState } from '../../store';
 
 import "./CourseInfo.css";
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
 
 interface Author {
     name: string;

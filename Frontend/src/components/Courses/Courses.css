@@ -24,5 +24,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+}
+
+.option-bar-button {
+    margin-bottom: 19px;
+}
+
+@media (max-width: 710px) {
+    .option-bar-button {
+        margin-left: 10px;
+    }
 }

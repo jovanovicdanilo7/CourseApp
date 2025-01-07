@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import { Input } from "../../../../common/Input/Input";
 import { Button } from "../../../../common/Button/Button";
+import { RootState } from "../../../../store";
 
 import "./SearchBar.css";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../store";
 
 interface Course {
     id: string;
