@@ -1,15 +1,14 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 
 import { Button } from "../../common/Button/Button";
 import { Logo } from "./components/Logo/Logo";
-
-import "./Header.css";
-import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { logout } from "../../store/user/actions";
 import { logoutUser } from "../../store/services";
-import axios from "axios";
+
+import "./Header.css";
 
 
 export function Header(): JSX.Element {
@@ -33,18 +32,8 @@ export function Header(): JSX.Element {
                 navigate("/login");
             }, 0);
         } catch (error) {
-            if (axios.isAxiosError(error)) {
-                if (error.response?.status === 401) {
-                    alert("Your session has expired. Please log in again.");
-                    dispatch(logout());
-                    localStorage.removeItem('token');
-                    navigate("/login");
-                } else {
-                    alert("An unexpected error occurred. Please try again.");
-                }
-            } else {
-                console.error("An unknown error occurred:", error);
-            }
+            console.trace("onLogout: Error occurred");
+            throw error;
         }
     };
     
