@@ -51,6 +51,7 @@ export function SearchBar({ onSearchResults }: SearchBarProps): JSX.Element {
                     type="text"
                     value={searchQuery}
                     onChange={handleSearchChange}
+                    className="search-bar-input-field"
                 />
             </div>
             

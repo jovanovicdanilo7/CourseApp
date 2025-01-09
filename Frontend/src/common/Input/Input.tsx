@@ -19,7 +19,7 @@ export const Input = React.forwardRef<HTMLInputElement | HTMLTextAreaElement, In
     const isDescriptionInput = className?.includes('description-input');
 
     return (
-        <div className="input-container">
+        <div className={`input-container ${className || ''}`}>
             <label htmlFor={id} className="input-label">{labelText}</label>
             {isDescriptionInput ? (
                 <textarea

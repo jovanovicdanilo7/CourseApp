@@ -47,6 +47,24 @@
     flex: 1;
 }
 
+@media (max-width: 1250px) {
+    .course-info-description {
+        padding-right: 0px;
+    }
+}
+
+@media (max-width: 500px) {
+    .course-info-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 350px) {
+    .course-info-description {
+        font-size: 13px;
+    }
+}
+
 .course-metadata {
     display: flex;
     flex: 0 0 30%;
@@ -57,6 +75,12 @@
 @media (max-width: 1250px) {
     .course-metadata {
         width: 60%;
+    }
+}
+
+@media (max-width: 400px) {
+    .course-metadata {
+        width: 90%;
     }
 }
 
@@ -74,6 +98,12 @@
     width: 100%;
 }
 
+@media (max-width: 480px) {
+    .course-metadata-description p {
+        font-size: 12px;
+    }
+}
+
 .course-metadata-description p b {
     font-size: 16px;
     font-weight: 700;
@@ -81,9 +111,21 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+@media (max-width: 480px) {
+    .course-metadata-description p b {
+        font-size: 13px;
+    }
+}
+
 .course-metadata-buttons {
     display: flex;
     justify-content:center;
+}
+
+@media (max-width: 450px) {
+    .course-metadata-buttons {
+        flex-direction: column;
+    }
 }
 
 .course-metadata-admin-buttons {
@@ -91,14 +133,60 @@
     flex-direction: row;
 }
 
+@media (max-width: 450px) {
+    .course-metadata-admin-buttons {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 430px) {
+    .course-metadata-admin-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 .course-metadata-buttons-show {
     margin-right: 15px;
+}
+
+@media (max-width: 450px) {
+    .course-metadata-buttons-show  {
+        margin-bottom: 5px;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 400px) {
+    .course-metadata-buttons-show  {
+        padding: 0 15px;
+    }
 }
 
 .course-metadata-buttons-delete {
     margin-right: 15px;
 }
 
+@media (max-width: 450px) {
+    .course-metadata-buttons-delete {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 430px) {
+    .course-metadata-buttons-delete {
+        margin-right: 0px;
+        margin-bottom: 5px;
+    }
+}
+
 .course-metadata-buttons-edit {
     margin-right: 15px;
+}
+
+@media (max-width: 450px) {
+    .course-metadata-buttons-edit {
+        margin-right: 0px;
+    }
 }

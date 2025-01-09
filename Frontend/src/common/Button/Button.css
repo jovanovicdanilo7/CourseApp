@@ -26,6 +26,12 @@
     text-transform: uppercase;
 }
 
+@media (max-width: 340px) {
+    .buttons p  {
+        font-size: 10px;
+    }
+}
+
 .icon {
     font-size: 25px;
     color: white;

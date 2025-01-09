@@ -32,6 +32,12 @@
     margin:45px;
 }
 
+@media (max-width: 500px) {
+    .course-info-description {
+        margin: 10px;
+    }
+}
+
 .course-info-description h3 {
     font-size: 20px;
     font-weight: 700;
