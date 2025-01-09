@@ -32,6 +32,12 @@
     }
 }
 
+@media (max-width: 470px) {
+    .create-author p {
+        font-size: 10px;
+    }
+}
+
 .icon {
     font-size: 25px;
     color: white;

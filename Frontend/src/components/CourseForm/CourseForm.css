@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
 }
 
 .create-course-container h3 {
@@ -10,7 +11,12 @@
     font-weight: 700;
     color: #333E48;
     margin-bottom: 20px;
-    text-align: left;
+}
+
+@media (max-width: 375px) {
+    .create-course-container h3 {
+        text-align: center;
+    }
 }
 
 .form-container {
@@ -19,9 +25,19 @@
     background-color: #ffffff;
     border: 1px solid #CFCFCF;
     border-radius: 4px;
-    padding: 10px 80px;
-    width: 1104px;
-    min-height: 700px;
+    padding: 40px 120px;
+}
+
+@media (max-width: 630px) {
+    .form-container {
+        padding: 40px 40px;
+    }
+}
+
+@media (max-width: 330px) {
+    .form-container {
+        padding: 40px 20px;
+    }
 }
 
 .main-info p:first-child,
@@ -52,6 +68,12 @@
     justify-content: space-between;
 }
 
+@media (max-width: 460px) {
+    .duration-data {
+        width: 80%;
+    }
+}
+
 .duration-data-input {
     flex-grow: 1;
     min-width: 0;
@@ -70,6 +92,12 @@
     width: 100%;
 }
 
+@media (max-width: 1070px) {
+    .authors-row {
+        flex-direction: column;
+    }
+}
+
 .authors-form {
     display: flex;
     flex-direction: column;
@@ -80,7 +108,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 610px;
     margin-right: 10px;
 }
 
@@ -101,6 +128,13 @@
     align-items: start;
     flex-direction: column;
     flex: 1;
+    margin-left: 30px;
+}
+
+@media (max-width: 1070px) {
+    .course-authors {
+        margin-left: 0px;
+    }
 }
 
 .course-authors span {

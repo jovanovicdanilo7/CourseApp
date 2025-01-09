@@ -1,20 +1,20 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 
 import { Button } from "../../common/Button/Button";
 import { Input } from "../../common/Input/Input";
 import { AuthorItem } from "./components/AuthorItem/AuthorItem";
 import { getCouresDuration } from "../../helpers/getCourseDuration";
-
-import "./CourseForm.css";
-import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { saveAuthor } from "../../store/authors/actions";
 import { addCourseThunk, updateCourseThunk } from "../../store/courses/thunk";
 import { addAuthorThunk, deleteAuthorThunk } from "../../store/authors/thunk";
 import { fetchCourseById } from "../../store/services";
+
+import "./CourseForm.css";
 
 interface CourseFormData {
     title: string;
@@ -82,7 +82,7 @@ export function CreateCourse(): JSX.Element {
                 navigate("/courses");
             }, 0); 
         } else {
-            const response = await dispatch(addCourseThunk(user.token, courseData));
+            await dispatch(addCourseThunk(user.token, courseData));
     
             courseAuthors.forEach((author: Author) => {
                 const authorExists = authorsInStore.some((existingAuthor: Author) => existingAuthor.id === author.id);
@@ -222,6 +222,7 @@ export function CreateCourse(): JSX.Element {
                                             onClick={ addAuthor }
                                             buttonText="Create author"
                                             type="button"
+                                            className="create-author"
                                         />
                                     </div>
                                 </div>
