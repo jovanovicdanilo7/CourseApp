@@ -67,9 +67,7 @@ export function CourseInfo(): JSX.Element {
                 </div>
             </div>
 
-            <div className="course-info-back-button">
-                <Button onClick={ () => navigate("/courses") } buttonText="Back" type="button"/>
-            </div>
+            <Button onClick={ () => navigate("/courses") } buttonText="Back" type="button" className="course-info-back-btn"/>
         </div>
     );
 }

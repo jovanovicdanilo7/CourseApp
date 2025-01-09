@@ -8,6 +8,11 @@
     cursor: pointer;
 }
 
+.course-info-back-btn {
+    width: fit-content;
+    margin-left: 70px;
+}
+
 .buttons:has(svg) {
     width: fit-content;
     height: 100%;
