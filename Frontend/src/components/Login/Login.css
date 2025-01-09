@@ -39,10 +39,28 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+@media (max-width: 410px) {
+    .login-form-text {
+        font-size: 13px;
+    }
+}
+
 .login-form p a {
     color: #333E48;
     text-decoration: none;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
+}
+
+@media (max-width: 410px) {
+    .login-form p a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 350px) {
+    .login-form p {
+        text-align: center;
+    }
 }
