@@ -130,6 +130,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
+    cursor: pointer;
 }
 
 .course-info-metadata p:first-child {

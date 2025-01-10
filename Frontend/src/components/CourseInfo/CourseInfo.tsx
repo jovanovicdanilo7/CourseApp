@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import React from "react";
+import React, { useState } from "react";
 
 import { Button } from '../../common/Button/Button';
 import { formatCreationDate } from '../../helpers/formatCreationDate';
@@ -28,6 +28,7 @@ export function CourseInfo(): JSX.Element {
     const authors = useSelector((state: RootState) => state.authors);
     const courses = useSelector((state: RootState) => state.courses);
     const navigate = useNavigate();
+    const [expanded, setExpanded] = useState(false);
 
     const course = courses.find((course: CourseFormData) => course.id === courseId);
 
@@ -63,7 +64,12 @@ export function CourseInfo(): JSX.Element {
                     <p><b>ID:</b>{course.id}</p>
                     <p><b>Duration:</b><span>{getCouresDuration(course.duration)}</span> hours</p>
                     <p><b>Created:</b>{formatCreationDate(course.creationDate)}</p>
-                    <p><b>Authors:</b>{authorNames.join(', ')}</p>
+                    <p 
+                        onClick={() => setExpanded(!expanded)} 
+                        style={{ whiteSpace: expanded ? "normal" : "nowrap" }}
+                    >
+                        <b>Authors:</b>{authorNames.join(', ')}
+                    </p>
                 </div>
             </div>
 
